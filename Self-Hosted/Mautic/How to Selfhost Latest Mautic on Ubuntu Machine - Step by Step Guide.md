@@ -6,16 +6,6 @@ Mautic is a powerful, open-source alternative to popular commercial email market
 
 Mautic is a free open source alternative to commercial email service providers like MailChimp.
 
-## Benefits of Self-Hosting Mautic
-* Full Data Ownership & Privacy
-* Cost Savings at Scale
-* Unlimited Customization
-* Scalability & Flexibility
-* Integrations & API Freedom
-* Advanced Features Without Extra Cost
-* Community & Open Source Ecosystem
-
-
 ## Requirements
 To follow this guide, you need the following;
 1. Ubuntu 22.04 OS running on your Local Computer/Virtual Machine or on a Remote Server(VPS).
@@ -128,6 +118,24 @@ Check MariaDB server version information.
 ```
 mariadb --version
 ```
+Log in to MariaDB console.
+```
+sudo mysql -u root
+```
+Next, create a new database for Mautic using the following command. This tutorial names it `mautic`, you can use whatever name you like for the database.
+```
+CREATE DATABASE mautic DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+```
+The following command will create a database user and password, and at the same time grant all permission of the new database to the new user so later on Mautic can write to the database. Replace with your preferred database name, username and password.
+```
+GRANT ALL ON mautic.* TO 'mauticuser'@'localhost' IDENTIFIED BY 'password';
+```
+Flush privileges table and exit MariaDB console.
+```
+FLUSH PRIVILEGES;
+
+EXIT;
+```
 # Step 4: Install PHP8.1
 ``` 
 sudo apt-get install -y php8.1 php8.1-cli php8.1-curl php8.1-mbstring php8.1-mysql \
@@ -157,24 +165,7 @@ Then make the web server user `(www-data)` as the owner of this directory.
 sudo chown -R www-data:www-data /var/www/mautic/
 ```
 # Step 6: Create a MariaDB Database and User for Mautic
-Log in to MariaDB console.
-```
-sudo mysql -u root
-```
-Next, create a new database for Mautic using the following command. This tutorial names it `mautic`, you can use whatever name you like for the database.
-```
-CREATE DATABASE mautic DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-```
-The following command will create a database user and password, and at the same time grant all permission of the new database to the new user so later on Mautic can write to the database. Replace with your preferred database name, username and password.
-```
-GRANT ALL ON mautic.* TO 'mauticuser'@'localhost' IDENTIFIED BY 'password';
-```
-Flush privileges table and exit MariaDB console.
-```
-FLUSH PRIVILEGES;
 
-EXIT;
-```
 ### If you use Apache web server, then you need to disable the PHP module for Apache.
 ```
 sudo a2dismod php7.4
