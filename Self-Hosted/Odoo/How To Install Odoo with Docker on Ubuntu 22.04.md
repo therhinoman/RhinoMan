@@ -54,7 +54,7 @@ volumes:
   data:
   db:
 ```
-Next we will create `env` file
+Next we will create `.env` file
 ```
 nano .env
 ```
