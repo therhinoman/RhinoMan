@@ -73,6 +73,7 @@ sudo chown www-data:www-data /var/www/html/ -R
 ```
 By default, Apache uses the system hostname as its global `ServerName`. If the system hostname can’t be resolved in DNS, then you will probably see the following error after running `sudo apache2ctl -t` command.
 
+Sample Output:
 ```
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.0.1. Set the 'ServerName' directive globally to suppress this message.
 ```
@@ -127,10 +128,6 @@ Check MariaDB server version information.
 ```
 mariadb --version
 ```
-As you can see, we have installed MariaDB Ver 15.1 Distrib 10.11.13.
-```
-mariadb  Ver 15.1 Distrib 10.11.13-MariaDB, for debian-linux-gnu (x86_64) using  EditLine wrapper
-```
 # Step 4: Install PHP8.1
 ``` 
 sudo apt-get install -y php8.1 php8.1-cli php8.1-curl php8.1-mbstring php8.1-mysql \
@@ -141,17 +138,7 @@ Restart Apache for the changes to take effect.
 ```
 sudo systemctl restart apache2
 ```
-Now if you refresh the `info.php` page in your browser, you will find that Server API is changed from `Apache 2.0 Handler` to `FPM/FastCGI`, which means Apache web server will pass PHP requests to PHP-FPM.
 
-Sample Output:
-
-<img width="1237" height="729" alt="image" src="https://github.com/user-attachments/assets/a31f06c3-5981-4856-8909-7115c4cac9d7" />
-
-You have successfully installed LAMP stack (Apache, MariaDB and PHP7.4) on Ubuntu 24.04. 
-For your server’s security, you should delete `info.php`.
-```
-sudo rm /var/www/html/info.php
-```
 # Step 5: Download Mautic 4.2 onto Your Ubuntu 24.04 Server
 Download the Mautic 4.2 version by executing the following command on your server
 ```
