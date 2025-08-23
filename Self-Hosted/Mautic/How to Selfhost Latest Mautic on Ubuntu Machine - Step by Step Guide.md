@@ -67,40 +67,6 @@ After it’s installed, Apache should be automatically started. Check its status
 ```
 systemctl status apache2
 ```
-Sample output:
-```
-● apache2.service - The Apache HTTP Server
-     Loaded: loaded (/usr/lib/systemd/system/apache2.service; enabled; preset: enabled)
-     Active: active (running) since Sun 2025-08-17 02:12:22 +04; 14s ago
-       Docs: https://httpd.apache.org/docs/2.4/
-   Main PID: 7054 (apache2)
-      Tasks: 55 (limit: 9377)
-     Memory: 5.5M (peak: 5.9M)
-        CPU: 24ms
-     CGroup: /system.slice/apache2.service
-             ├─7054 /usr/sbin/apache2 -k start
-             ├─7055 /usr/sbin/apache2 -k start
-             └─7056 /usr/sbin/apache2 -k start
-
-```
-`Hint`: If the above command doesn’t quit immediately, you can press `Q key` to gain back control of the terminal.
-If it’s not running, use systemctl to start it.
-
-It’s also a good idea to enable Apache to automatically start at system boot time.
-```
-sudo systemctl enable apache2
-```
-Check Apache version:
-```
-apache2 -v
-```
-Sample Output:
-```
-Server version: Apache/2.4.58 (Ubuntu)
-Server built:   2025-08-11T11:10:09
-```
-If you are installing **LAMP** on your local Ubuntu 24.04 computer, then type `127.0.0.1` or `localhost` in the browser address bar.
-
 Now we need to set `www-data` (Apache user) as the owner of document root (otherwise known as web root). By default it’s owned by the root user.
 ```
 sudo chown www-data:www-data /var/www/html/ -R
@@ -144,22 +110,7 @@ After it’s installed, MariaDB server should be automatically started. Use **sy
 ```
 systemctl status mariadb
 ```
-Sample Output:
-```
-● mariadb.service - MariaDB 10.11.13 database server
-     Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled; preset: enabled)
-     Active: active (running) since Sun 2025-08-17 02:23:43 +04; 4s ago
-       Docs: man:mariadbd(8)
-             https://mariadb.com/kb/en/library/systemd/
-   Main PID: 10048 (mariadbd)
-     Status: "Taking your SQL requests now..."
-      Tasks: 13 (limit: 61890)
-     Memory: 78.7M (peak: 82.5M)
-        CPU: 253ms
-     CGroup: /system.slice/mariadb.service
-             └─10048 /usr/sbin/mariadbd
 
-```
 To enable MariaDB to automatically start at boot time, run
 ```
 sudo systemctl enable mariadb
@@ -182,37 +133,9 @@ mariadb  Ver 15.1 Distrib 10.11.13-MariaDB, for debian-linux-gnu (x86_64) using 
 ```
 # Step 4: Install PHP8.1
 ``` 
-apt-get install -y php8.1 php8.1-cli php8.1-curl php8.1-mbstring php8.1-mysql \
+sudo apt-get install -y php8.1 php8.1-cli php8.1-curl php8.1-mbstring php8.1-mysql \
  php8.1-xml php8.1-zip php8.1-intl php8.1-gd php8.1-imap php8.1-bcmath \
  libapache2-mod-php8.1 unzip
-```
-
-
-## How to Run PHP-FPM with Apache
-There are basically two ways to run PHP code with Apache web server:
-
-* Apache PHP module
-* PHP-FPM.
-
-**PHP-FPM**, or PHP FastCGI Process Manager, is an alternative FastCGI daemon for PHP that provides advanced process management for high-traffic websites. It is widely used with web servers like Nginx and Apache to efficiently handle PHP requests.
-
-In the above steps, the Apache PHP7.4 module is used to handle PHP code, which is usually fine. But in some cases, you need to run PHP code with PHP-FPM instead. Here’s how.
-
-Disable the Apache PHP7.4 module.
-```
-sudo a2dismod php7.4
-```
-Install PHP-FPM.
-```
-sudo apt install php7.4-fpm
-```
-Enable `proxy_fcgi` and `setenvif` module.
-```
-sudo a2enmod proxy_fcgi setenvif
-```
-Enable the `/etc/apache2/conf-available/php7.4-fpm.conf` configuration file.
-```
-sudo a2enconf php7.4-fpm
 ```
 Restart Apache for the changes to take effect.
 ```
