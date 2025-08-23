@@ -210,7 +210,7 @@ Assuming that you have already connected your Godaddy domain `Nameserver` with C
 * Goto `Tunnels` under `Networks` on the Left Navigation Panel `Zero Trust Home`
 
 * Then create a new Tunnel `Create a tunnel`
-* `Select Clodflared`
+* `Select Cloudflared`
 * Name your tunnel
 * Choosing your environment, since we are on Ubuntu we will be using Debian. Select `Debian`
 * Install and run a connector. Copy and paste the code shown to your Ubuntu Machine Terminal.
