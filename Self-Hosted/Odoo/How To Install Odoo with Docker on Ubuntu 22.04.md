@@ -127,6 +127,6 @@ sudo systemctl reload nginx.service
 * Goto `Tunnels` under `Networks` on the Left Navigation Panel `Zero Trust Home`
 * Then create a new Tunnel `Create a tunnel`
 * `Select Cloudflared`
-* Name your tunnel odoo
+* Name your tunnel `odoo`
 * Choosing your environment, since we are on Ubuntu we will be using Debian. Select `Debian`
 * Install and run a connector. Copy and paste the code shown to your Ubuntu Machine Terminal.
