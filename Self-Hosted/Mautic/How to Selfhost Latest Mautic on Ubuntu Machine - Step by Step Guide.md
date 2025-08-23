@@ -1,6 +1,6 @@
 
 # How to Selfhost Latest Mautic on Ubuntu Machine - Step by Step Guide
-In this guide, we’ll walk you through the process of setting up the Mautic email marketing platform on Ubuntu 24.04 with the Apache web server.
+In this guide, we’ll walk you through the process of setting up the Mautic email marketing platform on Ubuntu 22.04 with the Apache web server.
 
 Mautic is a powerful, open-source alternative to popular commercial email marketing services such as MailChimp, giving you full control over your campaigns without the limitations of paid platforms. 
 
