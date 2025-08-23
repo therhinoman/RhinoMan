@@ -122,3 +122,11 @@ Finally, reload the **nginx** service with the new configuration
 ```
 sudo systemctl reload nginx.service
 ```
+# Step 6: Setting up Cloudfare with Zero Trust Tunnel
+* Log in to your `Cloudfare Account`.
+* Goto `Tunnels` under `Networks` on the Left Navigation Panel `Zero Trust Home`
+* Then create a new Tunnel `Create a tunnel`
+* `Select Cloudflared`
+* Name your tunnel odoo
+* Choosing your environment, since we are on Ubuntu we will be using Debian. Select `Debian`
+* Install and run a connector. Copy and paste the code shown to your Ubuntu Machine Terminal.
