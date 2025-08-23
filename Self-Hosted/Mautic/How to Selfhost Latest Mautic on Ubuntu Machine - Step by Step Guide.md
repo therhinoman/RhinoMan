@@ -101,9 +101,6 @@ Server built:   2025-08-11T11:10:09
 ```
 If you are installing **LAMP** on your local Ubuntu 24.04 computer, then type `127.0.0.1` or `localhost` in the browser address bar.
 
-<img width="1241" height="666" alt="image" src="https://github.com/user-attachments/assets/621ffda9-e189-4582-8804-eeb926022825" />
-
-
 Now we need to set `www-data` (Apache user) as the owner of document root (otherwise known as web root). By default it’s owned by the root user.
 ```
 sudo chown www-data:www-data /var/www/html/ -R
@@ -184,66 +181,11 @@ As you can see, we have installed MariaDB Ver 15.1 Distrib 10.11.13.
 mariadb  Ver 15.1 Distrib 10.11.13-MariaDB, for debian-linux-gnu (x86_64) using  EditLine wrapper
 ```
 # Step 4: Install PHP8.1
-PHP7.4 is the most stable version of PHP and has a minor performance edge over PHP7.3. Enter the following 
-
-Install **software-properties-common** first
+``` 
+apt-get install -y php8.1 php8.1-cli php8.1-curl php8.1-mbstring php8.1-mysql \
+ php8.1-xml php8.1-zip php8.1-intl php8.1-gd php8.1-imap php8.1-bcmath \
+ libapache2-mod-php8.1 unzip
 ```
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:ondrej/php
-sudo apt-get update
-```
-Press `Enter` when prompted
-```
-Adding repository.
-Press [ENTER] to continue or Ctrl-c to cancel.
-```
-Install Required and Recommended PHP Modules
-```
-sudo apt install -y php7.4 php7.4-cli php7.4-json php7.4-common php7.4-mysql php7.4-zip php7.4-gd php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath php7.4-imagick php7.4-fpm php7.4-imap php7.4-bz2 php7.4-intl php7.4-gmp
-
-```
-
-Enable the Apache PHP7.4 module then restart Apache Web server.
-```
-sudo a2enmod php7.4
-sudo systemctl restart apache2
-```
-Sample Output:
-```
-user@ubuntu-vm:~$ sudo a2enmod php7.4
-sudo systemctl restart apache2
-Considering dependency mpm_prefork for php7.4:
-Considering conflict mpm_event for mpm_prefork:
-Considering conflict mpm_worker for mpm_prefork:
-Module mpm_prefork already enabled
-Considering conflict php5 for php7.4:
-Module php7.4 already enabled
-```
-Check PHP version information.
-```
-php --version
-```
-Sample Output:
-```
-PHP 7.4.33 (cli) (built: Jul  3 2025 16:41:49) ( NTS )
-Copyright (c) The PHP Group
-Zend Engine v3.4.0, Copyright (c) Zend Technologies
-    with Zend OPcache v7.4.33, Copyright (c), by Zend Technologies
-```
-To test PHP scripts with Apache server, we need to create a `info.php` file in the document root directory.
-```
-sudo subl /var/www/html/info.php
-```
-Paste the following PHP code into the file.
-```
-<?php phpinfo(); ?>
-```
-Save the file. Now in the browser address bar, enter `127.0.0.1/info.php` or `localhost/info.php`.
-
-You should see your server’s PHP information. This means PHP scripts can run properly with Apache web server.
-
-<img width="1240" height="770" alt="image" src="https://github.com/user-attachments/assets/382ee1f3-c557-4553-be3f-514a27716ab5" />
-
 
 
 ## How to Run PHP-FPM with Apache
