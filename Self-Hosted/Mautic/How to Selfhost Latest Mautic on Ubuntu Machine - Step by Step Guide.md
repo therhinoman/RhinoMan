@@ -162,52 +162,34 @@ rm composer-setup.php
 sudo -u www-data composer -V
 ```
 
-### If you use Apache web server, then you need to disable the PHP module for Apache.
+### Enable Apache Rewrite and AllowOverride.
 ```
-sudo a2dismod php7.4
+a2enmod rewrite
+a2enmod headers
+systemctl restart apache2
 ```
-You also need to disable the prefork MPM module in Apache.
+# Step 7: Create the Mautic Directory and Set Ownership
 ```
-sudo a2dismod mpm_prefork
+mkdir -p /var/www/mautic
+chown -R www-data:www-data /var/www
 ```
-Now you need to run the following command to enable three modules in order to use PHP-FPM in Apache, regardless of whether `mod_php` is installed on your server.
-```
-sudo a2enmod mpm_event proxy_fcgi setenvif
-```
-Then restart Apache.
-```
-sudo systemctl restart apache2
-```
-# Step 7: Create Apache Virtual Host Config File for Mautic
 
-**Apache**
-
-If you use Apache web server, create a virtual host for Mautic.
+### Configure Apache Virtual Host
 ```
 sudo subl /etc/apache2/sites-available/mautic.conf
 ```
-Put the following text into the file. Replace `mautic.example.com` with your real domain name. 
-Later in this guide we will connect the domain with `Cloudfare Zero Trust Tunnel`.
+Paste the below;
 ```
 <VirtualHost *:80>
-  ServerName mautic.example.com
-  DocumentRoot /var/www/mautic/
-
-  ErrorLog ${APACHE_LOG_DIR}/error.log
-  CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-  <Directory />
-    Options FollowSymLinks
-    AllowOverride All
-  </Directory>
-
-  <Directory /var/www/mautic/>
-    Options FollowSymLinks MultiViews
-    AllowOverride All
-    Order allow,deny
-    allow from all
-  </Directory>
-
+ ServerName your-domain.com
+ ServerAlias www.your-domain.com
+ DocumentRoot /var/www/mautic/docroot
+ <Directory /var/www/mautic/docroot>
+ AllowOverride All
+ Require all granted
+ </Directory>
+ ErrorLog ${APACHE_LOG_DIR}/mautic_error.log
+ CustomLog ${APACHE_LOG_DIR}/mautic_access.log combined
 </VirtualHost>
 ```
 Save and close the file. Then enable this virtual host with:
