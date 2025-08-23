@@ -1,6 +1,5 @@
-**Credits**: https://www.linuxbabe.com/
 
-# How to Selfhost Mautic 4.2 on Ubuntu Machine - Step by Step Guide
+# How to Selfhost Latest Mautic on Ubuntu Machine - Step by Step Guide
 In this guide, we’ll walk you through the process of setting up the Mautic email marketing platform on Ubuntu 24.04 with the Apache web server.
 
 Mautic is a powerful, open-source alternative to popular commercial email marketing services such as MailChimp, giving you full control over your campaigns without the limitations of paid platforms. 
@@ -29,7 +28,7 @@ To follow this guide, you need the following;
 4. Cloudfare Free Account (To use the Zero Trust Tunnel).
 5. Apache web server.
 6. MariaDB.
-7. PHP (Mautic 4.2.1 prefers PHP7.4-FPM).
+7. PHP8.1
 
 For this guide, I'm using **Ubuntu 24.04** running locally on a **VMware® Workstation 17 Pro**
    
