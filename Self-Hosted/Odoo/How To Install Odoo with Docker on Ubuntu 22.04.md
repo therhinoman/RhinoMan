@@ -17,7 +17,6 @@ sudo apt upgrade
 ```
 # Step 2: Install Docker Compose
 ```
-sudo apt update
 sudo apt install docker-compose
 ```
 # Step 3: Creating Odoo folder
@@ -54,4 +53,27 @@ services:
 volumes:
   data:
   db:
+```
+Next we will `env` file
+```
+nano .env
+```
+Paste the below:
+```
+# postgresql environment variables
+POSTGRES_DB=postgres
+POSTGRES_PASSWORD=a_strong_password_for_user
+POSTGRES_USER=odoo
+PGDATA=/var/lib/postgresql/data/pgdata
+
+# odoo environment variables
+HOST=postgres
+USER=odoo
+PASSWORD=a_strong_password_for_user
+```
+Once you've finished editing your `.env` file, save your changes and close the text editor.
+
+Now you're ready to launch the **odoo** and **postgres** containers using the **docker-compose** command:
+```
+sudo docker-compose up -d
 ```
