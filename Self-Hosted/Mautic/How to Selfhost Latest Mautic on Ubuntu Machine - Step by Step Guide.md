@@ -147,22 +147,13 @@ Restart Apache for the changes to take effect.
 sudo systemctl restart apache2
 ```
 
-# Step 5: Download Mautic 4.2 onto Your Ubuntu 24.04 Server
-Download the Mautic 4.2 version by executing the following command on your server
+# Step 5: Install NPM (Required by Mautic 5 and above)
 ```
-wget https://github.com/mautic/mautic/releases/download/4.2.1/4.2.1-update.zip
+sudo apt install npm
 ```
-Install the unzip utility and unzip it to `/var/www/mautic/` directory.
+Check npm version
 ```
-sudo apt install unzip
-
-sudo mkdir -p /var/www/mautic/
-
-sudo unzip 4.2.1-update.zip -d /var/www/mautic/
-```
-Then make the web server user `(www-data)` as the owner of this directory.
-```
-sudo chown -R www-data:www-data /var/www/mautic/
+npm --version
 ```
 # Step 6: Create a MariaDB Database and User for Mautic
 
