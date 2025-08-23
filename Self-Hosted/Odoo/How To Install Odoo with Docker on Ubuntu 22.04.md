@@ -58,7 +58,7 @@ Next we will create `.env` file
 ```
 nano .env
 ```
-Insert the following lines into the file, replacing the highlighted values with your chosen ** POSTGRES_USER** and **POSTGRES_PASSWORD**.
+Insert the following lines into the file, replacing the highlighted values with your chosen **POSTGRES_USER** and **POSTGRES_PASSWORD**.
 Paste the below:
 ```
 # postgresql environment variables
