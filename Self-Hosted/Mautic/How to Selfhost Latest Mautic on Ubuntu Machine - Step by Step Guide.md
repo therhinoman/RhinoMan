@@ -18,7 +18,7 @@ Mautic is a free open source alternative to commercial email service providers l
 
 ## Requirements
 To follow this guide, you need the following;
-1. Ubuntu 24.04/22.04 OS running on your Local Computer/Virtual Machine or on a Remote Server(VPS).
+1. Ubuntu 22.04 OS running on your Local Computer/Virtual Machine or on a Remote Server(VPS).
 2. Domain name (You can buy domain names from NameCheap or GoDaddy).
 3. Domain Nameserver connected with Cloudfare. **YouTube Guide**: https://www.youtube.com/watch?v=TngeYJmp5pU
 4. Cloudfare Free Account (To use the Zero Trust Tunnel).
