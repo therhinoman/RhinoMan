@@ -15,10 +15,6 @@ Mautic is a free open source alternative to commercial email service providers l
 * Advanced Features Without Extra Cost
 * Community & Open Source Ecosystem
 
-## Prerequisites for installing Mautic on Ubuntu
-Mautic is written in PHP and relies on MySQL/MariaDB database server. So you need to set up a LAMP stack. If you prefer Apache web server, then set up LAMP stack.
-
-**LAMP** stands for Linux, Apache, MariaDB/MySQL, and PHP, all of which are open source and free to use. It is the most common software stack that powers dynamic websites and web applications. Linux is the operating system; Apache is the web server; MariaDB/MySQL is the database server and PHP is the server-side scripting language responsible for generating dynamic web pages.
 
 ## Requirements
 To follow this guide, you need the following;
@@ -30,11 +26,7 @@ To follow this guide, you need the following;
 6. MariaDB.
 7. PHP8.1
 
-For this guide, I'm using **Ubuntu 24.04** running locally on a **VMware® Workstation 17 Pro**
-   
-### Setting up Static IP Address for your Ubuntu Machine
-
-<img width="973" height="633" alt="image" src="https://github.com/user-attachments/assets/4dd0eedf-bd54-44c1-a16c-d72ef2d8e866" />
+For this guide, I'm using **Ubuntu 22.04** running locally on a **VMware® Workstation 17 Pro**
 
 ## Optional: Installing Sublime Text Editor
 For users unfamiliar with terminal-based text editors like `Nano` or `Vim`, `Sublime Text` provides an easier and more user-friendly option.
