@@ -183,8 +183,8 @@ As you can see, we have installed MariaDB Ver 15.1 Distrib 10.11.13.
 ```
 mariadb  Ver 15.1 Distrib 10.11.13-MariaDB, for debian-linux-gnu (x86_64) using  EditLine wrapper
 ```
-# Step 4: Install PHP7.4
-PHP7.4 is the most stable version of PHP and has a minor performance edge over PHP7.3. Enter the following command to install PHP7.4 and some common PHP modules. It is most compatible version with Mautic.
+# Step 4: Install PHP8.1
+PHP7.4 is the most stable version of PHP and has a minor performance edge over PHP7.3. Enter the following 
 
 Install **software-properties-common** first
 ```
