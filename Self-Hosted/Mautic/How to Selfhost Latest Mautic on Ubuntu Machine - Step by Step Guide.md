@@ -93,7 +93,6 @@ Syntax OK
 ```
 
 # Step 3: Install MariaDB Database Server
-MariaDB is a drop-in replacement for MySQL. It is developed by former members of MySQL team who are concerned that Oracle might turn MySQL into a closed-source product. Enter the following command to install MariaDB on Ubuntu 24.04.
 ```
 sudo apt install mariadb-server mariadb-client
 ```
@@ -155,7 +154,13 @@ Check npm version
 ```
 npm --version
 ```
-# Step 6: Create a MariaDB Database and User for Mautic
+# Step 6: Install and Configure Composer
+```
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+rm composer-setup.php
+sudo -u www-data composer -V
+```
 
 ### If you use Apache web server, then you need to disable the PHP module for Apache.
 ```
