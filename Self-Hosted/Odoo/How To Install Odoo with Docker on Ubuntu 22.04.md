@@ -145,7 +145,7 @@ sudo systemctl reload nginx.service
 * Choosing your environment, since we are on Ubuntu we will be using Debian. Select `Debian`
 * Install and run a connector. Copy and paste the code shown to your Ubuntu Machine Terminal.
 
-Next, Create Public Hostnames,
+Next, Create `Public Hostnames`,
 
 **Subdomain:** odoo
 
@@ -157,7 +157,7 @@ Next, Create Public Hostnames,
 
 Click on `TLS` and expand,
 
-**No TLS Verify** set it **ON**
+**No TLS Verify** set it `ON`
 
 
 # Step 7: Installing Certbot and Setting Up TLS Certificates
