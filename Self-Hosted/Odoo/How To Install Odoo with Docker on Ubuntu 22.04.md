@@ -90,6 +90,7 @@ We will use the container ID to set Restart Policy so that your containers resta
 ```
 sudo docker update --restart unless-stopped `Container ID`
 ```
+Do the above step for `odoo` and `Postgres` services.
 # Step 5: Installing and Configuring Nginx
 ```
 sudo apt install nginx
