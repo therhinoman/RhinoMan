@@ -161,3 +161,21 @@ After that, Let’s Encrypt will confirm your request and Certbot will download 
 Certbot will automatically reload Nginx with the new configuration and certificates. Reload your site in your browser and it should switch you over to HTTPS automatically if you chose the redirect option.
 
 Your site is now secure and it’s safe to continue with the web-based setup steps.
+# Step 8: Setting up Odoo
+In your web browser, refresh the page. You should now see Odoo’s database configuration screen loaded over a secure **https://** connection. From here, you can safely enter usernames and passwords to finish the installation.
+
+The details you provide on this page will guide Odoo in creating its PostgreSQL database and setting up the default administrative account.
+
+Complete the following fields:
+
+**Database Name:** odoo
+
+**Email:** your email address
+
+**Password:** a strong, unique password for the administrator account
+
+**Demo data:** select this option if this is your first Odoo installation
+
+The remaining fields can be left as their default values. Be sure to save your chosen email and password, as you’ll need them to log in to Odoo later.
+
+Finally, click **Create database** at the bottom left of the page. The setup may take a minute or two while Odoo creates the necessary database tables. Once finished, you’ll be redirected to the Odoo Apps administration page.
