@@ -79,14 +79,14 @@ Now you're ready to launch the **odoo** and **postgres** containers using the **
 ```
 sudo docker-compose up -d
 ```
-## `IMPORTANT` Starting Odoo services automatically at boot
-First we can check if the services for Odoo is running in Docker.
+## `IMPORTANT:` Starting Odoo services automatically at boot
+First we can check if the services for **Odoo** is running in Docker.
 ```
 sudo docker ps -a
 ```
 Now, you can see the `Container ID`, take a note of container IDs for `odoo` and `Postgres`.
 
-We use the container ID to set Restart Policy so that your containers restart automatically at boot.
+We will use the container ID to set Restart Policy so that your containers restart automatically at boot.
 ```
 sudo docker update --restart unless-stopped `Container ID`
 ```
