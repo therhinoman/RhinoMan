@@ -95,7 +95,7 @@ Do the above step for `odoo` and `Postgres` services.
 ```
 sudo apt install nginx
 ```
-Allow public traffic to ports 80 and 443 (HTTP and HTTPS) using the Nginx Full UFW application profile
+Allow public traffic to ports **80** and **443** (HTTP and HTTPS) using the Nginx Full UFW application profile
 ```
 sudo ufw allow "Nginx Full"
 ```
