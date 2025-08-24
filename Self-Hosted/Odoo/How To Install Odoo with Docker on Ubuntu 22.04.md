@@ -174,7 +174,7 @@ Complete the following fields:
 
 **Password:** a strong, unique password for the administrator account
 
-**Demo data:** select this option if this is your first Odoo installation
+**Demo Data:** select this option if this is your first Odoo installation
 
 The remaining fields can be left as their default values. Be sure to save your chosen email and password, as you’ll need them to log in to Odoo later.
 
