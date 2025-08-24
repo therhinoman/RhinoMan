@@ -1,6 +1,7 @@
 volumes:
   nextcloud_yt:
   db_yt:
+  redis_data:  
 
 services:
   db:
@@ -52,7 +53,6 @@ services:
       - "9980:9980"
     networks:
       - nxnetwork_yt
-
   redis:
     image: redis:alpine
     container_name: nextcloud_redis
@@ -62,9 +62,8 @@ services:
     environment:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
     volumes:
-      - ./redis_data_yt:/data
-
-        
+      - redis_data:/data
+           
 networks:
   nxnetwork_yt:
     driver: bridge
