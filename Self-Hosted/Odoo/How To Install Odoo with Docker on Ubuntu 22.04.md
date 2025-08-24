@@ -91,6 +91,8 @@ We will use the container ID to set Restart Policy so that your containers resta
 sudo docker update --restart unless-stopped `Container ID`.
 ```
 Do the above step for `odoo` and `Postgres` services.
+
+Now, you can restart your VM to test if the `odoo` services have started automatically at boot.
 # Step 5: Installing and Configuring Nginx
 ```
 sudo apt install nginx
