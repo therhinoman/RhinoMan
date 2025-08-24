@@ -88,14 +88,14 @@ Now, you can see the `Container ID`, take a note of container IDs for `odoo` and
 
 We will use the container ID to set Restart Policy so that your containers restart automatically at boot.
 ```
-sudo docker update --restart unless-stopped `Container ID`
+sudo docker update --restart unless-stopped `Container ID`.
 ```
 Do the above step for `odoo` and `Postgres` services.
 # Step 5: Installing and Configuring Nginx
 ```
 sudo apt install nginx
 ```
-Allow public traffic to ports 80 and 443 (HTTP and HTTPS) using the Nginx Full UFW application profile:
+Allow public traffic to ports 80 and 443 (HTTP and HTTPS) using the Nginx Full UFW application profile
 ```
 sudo ufw allow "Nginx Full"
 ```
