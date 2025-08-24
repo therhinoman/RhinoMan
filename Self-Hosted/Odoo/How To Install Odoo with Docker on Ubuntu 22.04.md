@@ -144,6 +144,20 @@ sudo systemctl reload nginx.service
 * Name your tunnel `odoo`
 * Choosing your environment, since we are on Ubuntu we will be using Debian. Select `Debian`
 * Install and run a connector. Copy and paste the code shown to your Ubuntu Machine Terminal.
+
+Next, Create Public Hostnames,
+**Subdomain:** odoo
+
+**Domain:** your_domain_here
+
+**Service Type:** HTTPS
+
+**URL:** your Ubuntu VM local IP address.
+
+Click on TLS and expand,
+**No TLS Verify** set it **ON**
+
+
 # Step 7: Installing Certbot and Setting Up TLS Certificates
 
 First, install Certbot and its Nginx plugin
