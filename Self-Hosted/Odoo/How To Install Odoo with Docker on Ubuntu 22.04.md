@@ -79,7 +79,7 @@ Now you're ready to launch the **odoo** and **postgres** containers using the **
 ```
 sudo docker-compose up -d
 ```
-## Starting Odoo services automatically at boot
+`IMPORTANT` ## Starting Odoo services automatically at boot
 First we can check if the services for Odoo is running in Docker.
 ```
 sudo docker ps -a
