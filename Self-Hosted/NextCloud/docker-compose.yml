@@ -37,7 +37,7 @@ services:
       - nextcloud_yt:/var/www/html
     networks:
       - nxnetwork_yt
-      
+
   collabora:
     image: collabora/code
     container_name: collabora
@@ -51,7 +51,20 @@ services:
     ports:
       - "9980:9980"
     networks:
-      - nxnetwork_yt    
+      - nxnetwork_yt
+
+  redis:
+    image: redis:alpine
+    container_name: nextcloud_redis
+    hostname: nextcloud_redis
+    restart: always
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    environment:
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    volumes:
+      - ./redis_data_yt:/data
+
+        
 networks:
   nxnetwork_yt:
     driver: bridge
