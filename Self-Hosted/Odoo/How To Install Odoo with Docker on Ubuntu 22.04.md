@@ -146,6 +146,7 @@ sudo systemctl reload nginx.service
 * Install and run a connector. Copy and paste the code shown to your Ubuntu Machine Terminal.
 
 Next, Create Public Hostnames,
+
 **Subdomain:** odoo
 
 **Domain:** your_domain_here
@@ -154,7 +155,8 @@ Next, Create Public Hostnames,
 
 **URL:** your Ubuntu VM local IP address.
 
-Click on TLS and expand,
+Click on `TLS` and expand,
+
 **No TLS Verify** set it **ON**
 
 
