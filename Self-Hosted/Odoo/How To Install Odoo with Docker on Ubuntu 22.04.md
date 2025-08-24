@@ -130,3 +130,22 @@ sudo systemctl reload nginx.service
 * Name your tunnel `odoo`
 * Choosing your environment, since we are on Ubuntu we will be using Debian. Select `Debian`
 * Install and run a connector. Copy and paste the code shown to your Ubuntu Machine Terminal.
+# Step 7: Installing Certbot and Setting Up TLS Certificates
+
+First, install Certbot and its Nginx plugin
+```
+sudo apt install certbot python3-certbot-nginx
+```
+Next, run certbot in --nginx mode, and specify the same domain that you used in the Nginx server_name configuration directive
+```
+sudo certbot --nginx -d your_domain_here
+```
+You’ll be prompted to agree to the Let’s Encrypt terms of service, and to enter an email address.
+
+Afterwards, you’ll be asked if you want to redirect all HTTP traffic to HTTPS. It’s up to you, but this is generally recommended and safe to do.
+
+After that, Let’s Encrypt will confirm your request and Certbot will download your certificate.
+
+Certbot will automatically reload Nginx with the new configuration and certificates. Reload your site in your browser and it should switch you over to HTTPS automatically if you chose the redirect option.
+
+Your site is now secure and it’s safe to continue with the web-based setup steps
