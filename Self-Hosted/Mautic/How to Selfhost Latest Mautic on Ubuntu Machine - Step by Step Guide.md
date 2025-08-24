@@ -14,7 +14,7 @@ To follow this guide, you need the following;
 4. Cloudfare Free Account (To use the Zero Trust Tunnel).
 5. Apache web server.
 6. MariaDB.
-7. PHP8.1
+7. PHP 8.1
 
 For this guide, I'm using **Ubuntu 22.04** running locally on a **VMware® Workstation 17 Pro**
 
@@ -135,7 +135,7 @@ FLUSH PRIVILEGES;
 
 EXIT;
 ```
-# Step 4: Install PHP8.1
+# Step 4: Install PHP 8.1
 ``` 
 sudo apt-get install -y php8.1 php8.1-cli php8.1-curl php8.1-mbstring php8.1-mysql \
  php8.1-xml php8.1-zip php8.1-intl php8.1-gd php8.1-imap php8.1-bcmath \
