@@ -79,6 +79,17 @@ Now you're ready to launch the **odoo** and **postgres** containers using the **
 ```
 sudo docker-compose up -d
 ```
+### Starting Odoo services automatically at boot
+First we can check if the services for Odoo is running in Docker.
+```
+sudo docker ps -a
+```
+Now, you can see the `Container ID`, take a note of container IDs for `odoo` and `Postgres`.
+
+We use the container ID to set Restart Policy so that your containers restart automatically at boot.
+```
+sudo docker update --restart unless-stopped `Container ID`
+```
 # Step 5: Installing and Configuring Nginx
 ```
 sudo apt install nginx
@@ -148,4 +159,4 @@ After that, Let’s Encrypt will confirm your request and Certbot will download 
 
 Certbot will automatically reload Nginx with the new configuration and certificates. Reload your site in your browser and it should switch you over to HTTPS automatically if you chose the redirect option.
 
-Your site is now secure and it’s safe to continue with the web-based setup steps
+Your site is now secure and it’s safe to continue with the web-based setup steps.
