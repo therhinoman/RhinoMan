@@ -32,6 +32,7 @@ $CONFIG = array (
   'datadirectory' => '/var/www/html/data',
   'dbtype' => 'mysql',
   'version' => '31.0.8.1',
+  'overwriteprotocol' => 'https',
   'overwrite.cli.url' => 'http://nextcloud.rhinoman.me',
   'dbname' => 'nextcloud',
   'dbhost' => 'db',
