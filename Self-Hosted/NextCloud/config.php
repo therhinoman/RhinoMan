@@ -1,6 +1,6 @@
-# cd /var/lib/docker/volume/[CONTAINERNAME]/_data/config
-# subl config.php
-# sudo docker exec -it nextcloud_redis redis-cli -a mysecurepassword monitor
+// cd /var/lib/docker/volume/[CONTAINERNAME]/_data/config
+// subl config.php
+// sudo docker exec -it nextcloud_redis redis-cli -a mysecurepassword monitor
 
 <?php
 $CONFIG = array (
