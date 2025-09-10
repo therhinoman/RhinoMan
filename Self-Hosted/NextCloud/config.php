@@ -2,6 +2,7 @@
 // cd /var/lib/docker/volumes/[CONTAINERNAME]/_data/config
 // subl config.php
 // sudo docker exec -it nextcloud_redis redis-cli -a mysecurepassword monitor
+// https://docs.nextcloud.com/server/latest/admin_manual/configuration_server/caching_configuration.html
 
 
 <?php
